@@ -31,7 +31,7 @@ namespace API.Controllers
             {
                 UserName = registerDto.UserName,
                 PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registerDto.Password)),
-                PasswordSalt = hmac.Key
+                PasswordSalt = hmac.Key //Générée par le new HMACSHA512
             };
 
             _context.Users.Add(user);
